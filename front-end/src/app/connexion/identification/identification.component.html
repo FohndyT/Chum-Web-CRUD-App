@@ -1,0 +1,23 @@
+<barre-connexion></barre-connexion>
+
+<img class="arriere-plan" src="Nurse.jpg">
+<div class="case-identification">
+    <h1>Indentification</h1>
+    <br>
+    <div *ngIf="messageErreur" class="error">{{ messageErreur }}</div>
+    <form (ngSubmit)="onSubmit()">
+        <label>Email</label>
+        <br>
+        <input type="email" [(ngModel)]="identifiant" name="identifiant" autocomplete="email" required autofocus>
+        <br><br>
+        <label>Mot de passe</label>
+        <br>
+        <input type="password" [(ngModel)]="motDePasse" name="motDePasse" autocomplete="current-password" required>
+        <br><br>
+        <button type="submit">Connecte-toi</button>
+        <br><br>
+        <a routerLink="/connexion/inscription" style="color: #5B21B6">
+            Tu n'as pas de compte ?<br>Inscrit-toi maintenant !
+        </a>
+    </form>
+</div>

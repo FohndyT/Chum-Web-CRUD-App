@@ -1,0 +1,8 @@
+<barre-menu></barre-menu>
+<img class="arriere-plan" src="ChumImage.png">
+<h1 class="bienvenue">Bienvenue au Chum !</h1>
+
+<div *ngIf="estConnecte; else elseBlock" class="connexion-info">{{ user.email }}</div>
+<ng-template #elseBlock>
+    <div class="connexion-info">Vous n'êtes pas connecté(e)</div>
+</ng-template>

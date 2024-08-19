@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+{% block title %} Chum - Projects {% endblock %}
+
+{% block body %}
+    {{ include("navigation_bar/manageNav.html.twig") }}
+
+    {% if is_granted("ROLE_ADMIN") %}
+    <button class="account-commands-button" onclick="window.location.href='{{ path('create_project') }}'">Add New Project</button>
+    <button class="account-commands-button" onclick="window.location.href='{{ path('assign_user_to_project') }}'">Assign Manager</button>
+    {% endif %}
+
+    {% for project in projects %}
+        <button class="account-commands-button" onclick="window.location.href='{{ path('project_detail', {'id': project.id}) }}'">{{ project.projectCode }}</button>
+    {% endfor %}
+
+{% endblock %}

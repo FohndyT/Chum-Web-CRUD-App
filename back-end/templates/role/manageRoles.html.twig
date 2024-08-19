@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+{% block title %} Chum - Manage Roles {% endblock %}
+
+{% block body %}
+    {{ include("navigation_bar/manageNav.html.twig") }}
+
+    <button class="account-commands-button" onclick="window.location.href='{{ path('createRole') }}'">Add New Role</button>
+    {% for role in roles %}
+        <button class="account-commands-button" onclick="window.location.href='{{ path('role_detail', {'id': role.id}) }}'">{{ role.name }}</button>
+    {% endfor %}
+
+{% endblock %}

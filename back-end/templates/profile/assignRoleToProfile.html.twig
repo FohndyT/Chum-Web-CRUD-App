@@ -1,0 +1,21 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Chum - Assign Role To Profile{% endblock %}
+
+{% block body %}
+    {{ include("navigation_bar/manageNav.html.twig") }}
+
+    <div class="modify-my-account-grid">
+        <h1>Assign Role To Profile</h1>
+        <br>
+        {{ form_start(form) }}
+        <p>Profile</p>
+        {{ form_widget(form.profile) }}
+        <br><br>
+        <p>Role</p>
+        {{ form_widget(form.role) }}
+        <br><br>
+        <button class="btn">{{ button_label|default('Save') }}</button>
+        {{ form_end(form) }}
+    </div>
+{% endblock %}

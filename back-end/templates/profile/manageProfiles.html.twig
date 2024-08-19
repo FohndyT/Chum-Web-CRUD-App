@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+{% block title %} Chum - Manage Roles {% endblock %}
+
+{% block body %}
+    {{ include("navigation_bar/manageNav.html.twig") }}
+
+    <button class="account-commands-button" onclick="window.location.href='{{ path('createProfile.html.twig') }}'">Add New Profile</button>
+    <button class="account-commands-button" onclick="window.location.href='{{ path('assign_role_to_profile') }}'">Assign Role</button>
+    <button class="account-commands-button" onclick="window.location.href='{{ path('assign_profile_to_user') }}'">Assign Profile <br>To User</button>
+
+    {% for profile in profiles %}
+        <button class="account-commands-button" onclick="window.location.href='{{ path('profile_detail', {'id': profile.id}) }}'">{{ profile.name }}</button>
+    {% endfor %}
+
+{% endblock %}

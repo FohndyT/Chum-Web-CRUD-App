@@ -1,0 +1,11 @@
+<!-- Bar de naviguation -->
+<div class="navigation_bar">
+    <a class="logo" href="{{ path('homepage_route') }}" style="text-decoration: none;">CHUM</a>
+    {% if app.user %}
+        <a class="command log" href="{{ path('app_login') }}">Disconnect</a>
+    {% else %}
+        <a class="command log" href="{{ path('app_login') }}">Log in | Sign up</a>
+    {% endif %}
+    <a class="command" href="{{ path('manage_route') }}">Manage</a>
+    <a class="command active" href="{{ path('homepage_route') }}">Home</a>
+</div>

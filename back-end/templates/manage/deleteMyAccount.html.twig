@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Chum - Delete My Account{% endblock %}
+
+{% block body %}
+    {{ include("navigation_bar/manageNav.html.twig") }}
+
+    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+        <button class="delete-my-account-button" onclick="window.location.href='{{ path('deleteMyAccount_route') }}'" style="background-color: red; color: white; width: 500px; height: 100px; font-size: 32px; cursor: pointer;">Delete my account</button>
+    </div>
+
+{% endblock %}

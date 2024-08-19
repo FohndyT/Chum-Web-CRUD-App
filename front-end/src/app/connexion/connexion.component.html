@@ -1,0 +1,9 @@
+<barre-connexion></barre-connexion>
+<div *ngIf="estConnecte; else elseBlock" class="case-identification">
+    Vous êtes connecté(e) en tant que {{ user.email }}
+    <br>
+    <a routerLink="/" (click)="deconnexion()">Déconnectez-vous</a>
+</div>
+<ng-template #elseBlock>
+    blablabla
+</ng-template>

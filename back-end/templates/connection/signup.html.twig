@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Chum - Sign up {% endblock %}
+{% block body %}
+    {{ include("navigation_bar/connectionNav.html.twig") }}
+
+    <div class="background" style="background-image: url('{{ asset('images/Nurse.jpg') }}'); background-size: cover; height: 100vh;">
+        <div class="img-container">
+            <img src="{{asset('images/CHUM_logo.png')}}" alt="CHUM logo" width="400px" height="381">
+        </div>
+        <div class="register-grid">
+            <h1 style="font-size: 70px; text-align: center">Register</h1>
+            <br>
+            {{ form_start(registrationForm, {'attr': {'style': 'text-align: center'}}) }}
+                <input name="{{ field_name(registrationForm.email) }}" value="{{ field_value(registrationForm.email) }}" placeholder="{{ field_label(registrationForm.email) }}" required>
+                <br><br>
+                <input name="{{ field_name(registrationForm.plainPassword) }}" value="{{ field_value(registrationForm.plainPassword) }}" placeholder="Password" type="password" required>
+                <br><br>
+            <div class="form-group">
+                {{ form_label(registrationForm.agreeTerms, null, {'label_attr': {'class': 'checkbox-label'}}) }}
+                {{ form_widget(registrationForm.agreeTerms) }}
+            </div>
+            <br>
+                <button type="submit" class="btn">Register</button>
+            {{ form_end(registrationForm) }}
+            <br><br>
+            <a href="{{ path('app_login') }}" style="color: #5B21B6; cursor: pointer; align-self: center">
+                Already have an account ? Log in now!
+            </a>
+        </div>
+    </div>
+{% endblock %}

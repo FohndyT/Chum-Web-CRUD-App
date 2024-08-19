@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Chum - Account View{% endblock %}
+
+{% block body %}
+    {{ include("navigation_bar/manageNav.html.twig") }}
+
+    <h1>Manage Accounts</h1>
+    <br>
+    <h2>Admins</h2>
+    <ul>
+        {% for user in userCategory['ROLE_ADMIN'] %}
+            <li><a href="{{ path('accountDetails_route', {'id': user.id}) }}">{{ user.email }}</a></li>
+        {% endfor %}
+    </ul>
+    <br>
+    <h2>Users</h2>
+    <ul>
+        {% for user in userCategory['ROLE_USER'] %}
+            <li><a href="{{ path('accountDetails_route', {'id': user.id}) }}">{{ user.email }}</a></li>
+        {% endfor %}
+    </ul>
+{% endblock %}

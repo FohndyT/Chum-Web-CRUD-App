@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+{% block title %}Chum - Create Profile{% endblock %}
+
+{% block body %}
+    {{ include("navigation_bar/manageNav.html.twig") }}
+
+    <div class="modify-my-account-grid">
+        <h1>Create new profile</h1>
+        <br>
+        {{ form_start(form) }}
+        <p>Name</p>
+        {{ form_widget(form.name) }}
+        <br><br>
+        <p>Description</p>
+        {{ form_widget(form.description) }}
+        <br><br>
+        <button class="btn">{{ button_label|default('Save') }}</button>
+        {{ form_end(form) }}
+    </div>
+{% endblock %}

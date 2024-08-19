@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Role details{% endblock %}
+
+{% block body %}
+    {{ include("navigation_bar/manageNav.html.twig") }}
+
+    <h1>Role Info</h1>
+    <br>
+    <p>Name: {{ role.name }}</p>
+    <p>Description: {{ role.description }}</p>
+{% endblock %}

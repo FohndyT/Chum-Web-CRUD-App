@@ -1,0 +1,19 @@
+.boutons {
+    display: inline-block;
+}
+
+.gestion-boutons {
+    width: 200px;
+    height: 200px;
+
+    border-style: solid;
+    border-radius: 20px;
+    border-width: 5px;
+    margin-inline: 30px;
+    margin-top: 30px;
+
+    cursor: pointer;
+    font-size: 20px;
+
+    background-color: var(--couleur-secondaire);
+}

@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Chum - Homepage{% endblock %}
+{% block body %}
+    {{ include('navigation_bar/homeNav.html.twig') }}
+
+    <div class="background" style="background-image: url('{{ asset('images/ChumImage.png') }}'); background-size: cover; background-position: center; height: 100%; width: 100%; position: fixed">
+        <h1 style="text-align: center; font-size: 60px; margin-top: 150px; color: blue; -webkit-text-stroke: 1px white;">
+            Welcome to the Chum !
+        </h1>
+        <form style="display: flex; justify-content: center; align-items: center; flex-direction: row; margin-top: 20px">
+            {% if app.user %}
+                <button type="button" class="home_buttons">{{ app.user.email }}</button>
+            {% else %}
+                <button type="button" class="home_buttons">You are not logged in.</button>
+            {% endif %}
+        </form>
+    </div>
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+{% block title %}Chum - Create Project{% endblock %}
+
+{% block body %}
+    {{ include("navigation_bar/manageNav.html.twig") }}
+
+    <div class="modify-my-account-grid" style="height: 425px; top: 55%">
+        <h1>Create new project</h1>
+        <br>
+        {{ form_start(form) }}
+        <p>Code</p>
+        {{ form_widget(form.projectCode) }}
+        <br><br>
+        <p>Name</p>
+        {{ form_widget(form.projectName) }}
+        <br><br>
+        <p>Starting Date</p>
+        {{ form_widget(form.projectDateDebut) }}
+        <br><br>
+        <p>Ending Date</p>
+        {{ form_widget(form.projectDateEnd) }}
+        <br><br>
+        <p>Description</p>
+        {{ form_widget(form.projectDescription) }}
+        <br><br>
+        <button class="btn">{{ button_label|default('Save') }}</button>
+        {{ form_end(form) }}
+    </div>
+{% endblock %}

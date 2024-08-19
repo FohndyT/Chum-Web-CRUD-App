@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+{% block title %}Chum - Account{% endblock %}
+
+{% block body %}
+    {{ include("navigation_bar/manageNav.html.twig") }}
+
+    <div class="account-commands"></div>
+        {% if is_granted("ROLE_USER") %}
+            <button class="account-commands-button" onclick="window.location.href='{{ path('modifyMyAccount_route') }}'">Modify My Info</button>
+            <button class="account-commands-button" onclick="window.location.href='{{ path('deleteMyAccount_route') }}'">Delete My Account</button>
+            <button class="account-commands-button" onclick="window.location.href='{{ path('projects') }}'">Manage Projects</button>
+        {% endif %}
+
+        {% if is_granted("ROLE_ADMIN") %}
+            <button class="account-commands-button" onclick="window.location.href='{{ path('accountsView_route') }}'">Accounts View</button>
+            <button class="account-commands-button" onclick="window.location.href='{{ path('manage_roles') }}'">Manage Roles</button>
+            <button class="account-commands-button" onclick="window.location.href='{{ path('manage_profiles') }}'">Manage Profiles</button>
+        {% endif %}
+{% endblock %}
